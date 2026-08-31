@@ -1,0 +1,1451 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Crange | مؤتمر شباب الصليب والملكة هيلانة</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rakkas&family=Tajawal:wght@400;500;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --cream: #ede1c6;
+        --paper: #f6efdd;
+        --coffee: #241a12;
+        --coffee-soft: #4a392c;
+        --rust: #b14a2e;
+        --mustard: #da9a33;
+        --teal: #2e6e67;
+        --tape-brown: #5c4430;
+        --reel: #1b140e;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0;
+        background: var(--cream);
+        color: var(--coffee);
+        font-family: "Tajawal", sans-serif;
+        position: relative;
+        overflow-x: hidden;
+      }
+      body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        z-index: 999;
+        opacity: 0.05;
+        background-image: radial-gradient(#000 1px, transparent 1px);
+        background-size: 3px 3px;
+        mix-blend-mode: multiply;
+      }
+      .wrap {
+        max-width: 640px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      /* ===== HERO ===== */
+      .hero {
+        padding: 44px 0 0;
+        text-align: center;
+        position: relative;
+      }
+      .cringe-badge {
+        position: absolute;
+        top: 2px;
+        left: 50%;
+        transform: translateX(-118px) rotate(-9deg);
+        background: var(--mustard);
+        color: var(--coffee);
+        font-weight: 900;
+        font-size: 11px;
+        padding: 5px 10px;
+        border-radius: 4px;
+        border: 2px dashed var(--coffee);
+        box-shadow: 0 3px 0 rgba(36, 26, 18, 0.25);
+        z-index: 2;
+      }
+      .eyebrow {
+        font-weight: 800;
+        letter-spacing: 0.05em;
+        font-size: 0.75rem;
+        color: var(--teal);
+        margin-bottom: 16px;
+      }
+      .cassette {
+        width: min(88vw, 380px);
+        margin: 0 auto 24px;
+        background: linear-gradient(
+          160deg,
+          #8a6b48,
+          var(--tape-brown) 55%,
+          #3f2e1e
+        );
+        border-radius: 16px;
+        padding: 16px;
+        box-shadow: 0 20px 34px rgba(36, 26, 18, 0.35);
+      }
+      .cassette-label {
+        background: var(--paper);
+        border: 2px solid var(--coffee);
+        border-radius: 8px;
+        padding: 12px 12px 10px;
+      }
+      .cassette-top {
+        display: flex;
+        justify-content: space-between;
+        font-size: 0.62rem;
+        font-weight: 800;
+        letter-spacing: 0.1em;
+        color: var(--rust);
+        margin-bottom: 4px;
+      }
+      .cassette-title {
+        font-family: "Rakkas", serif;
+        font-size: clamp(2rem, 8vw, 2.8rem);
+        line-height: 1.15;
+        color: var(--coffee);
+        margin: 2px 0 4px;
+      }
+      .cassette-sub {
+        font-size: 0.85rem;
+        font-weight: 700;
+        color: var(--coffee-soft);
+      }
+      .reels {
+        display: flex;
+        justify-content: center;
+        gap: 60px;
+        margin-top: 12px;
+      }
+      .reel {
+        width: 46px;
+        height: 46px;
+        border-radius: 50%;
+        background: radial-gradient(
+          circle at center,
+          var(--reel) 0 30%,
+          transparent 31% 40%,
+          var(--reel) 41% 55%,
+          transparent 56%
+        );
+        position: relative;
+        animation: spin 6s linear infinite;
+      }
+      .reel::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: 50%;
+        border: 3px dashed rgba(237, 225, 198, 0.35);
+      }
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+      .tape-strip {
+        height: 8px;
+        margin-top: 10px;
+        border-radius: 4px;
+        background: repeating-linear-gradient(
+          90deg,
+          #1b140e 0 6px,
+          #2a1e14 6px 12px
+        );
+      }
+      .hero p.tagline {
+        max-width: 420px;
+        margin: 18px auto 0;
+        font-weight: 500;
+        color: var(--coffee-soft);
+        line-height: 1.8;
+        font-size: 0.9rem;
+      }
+      .info-card {
+        max-width: 380px;
+        margin: 18px auto 0;
+        background: var(--paper);
+        border: 2px solid var(--coffee);
+        border-radius: 10px;
+        padding: 12px 16px;
+      }
+      .info-row {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-weight: 700;
+        font-size: 0.85rem;
+        color: var(--coffee);
+      }
+
+      /* ===== COUNTDOWN (tape counter) ===== */
+      .counter {
+        max-width: 420px;
+        margin: 26px auto 0;
+        background: #3f2e1e;
+        border-radius: 14px;
+        padding: 16px 18px;
+        box-shadow: 0 10px 24px rgba(36, 26, 18, 0.3);
+      }
+      .counter-label {
+        font-size: 0.62rem;
+        font-weight: 800;
+        color: #f4e9c8;
+        letter-spacing: 0.1em;
+        text-align: center;
+        margin-bottom: 10px;
+        opacity: 0.85;
+      }
+      .counter-row {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+      }
+      .counter-box {
+        text-align: center;
+      }
+      .counter-box .num {
+        background: #1b140e;
+        color: #f4e9c8;
+        font-family: monospace;
+        font-weight: 700;
+        font-size: 1.35rem;
+        border-radius: 6px;
+        padding: 6px 4px;
+        min-width: 52px;
+        border: 2px solid #3f2e1e;
+        letter-spacing: 1px;
+      }
+      .counter-box .lbl {
+        font-size: 0.62rem;
+        font-weight: 800;
+        color: var(--coffee-soft);
+        margin-top: 4px;
+        letter-spacing: 0.05em;
+      }
+
+      /* ===== INTRO ===== */
+      .intro {
+        max-width: 560px;
+        margin: 34px auto 0;
+        text-align: center;
+      }
+      .intro h2 {
+        font-family: "Rakkas", serif;
+        font-size: 1.5rem;
+        color: var(--rust);
+        margin: 0 0 10px;
+      }
+      .intro p {
+        font-size: 0.9rem;
+        line-height: 1.9;
+        color: var(--coffee-soft);
+        font-weight: 500;
+        margin: 0;
+      }
+
+      /* ===== SIDE TOGGLE ===== */
+      .deck {
+        position: sticky;
+        top: 14px;
+        z-index: 20;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        margin: 34px 0 8px;
+      }
+      .side-btn {
+        font-family: "Tajawal", sans-serif;
+        font-weight: 800;
+        font-size: 0.9rem;
+        padding: 10px 22px;
+        border-radius: 999px;
+        border: 2px solid var(--coffee);
+        background: var(--paper);
+        color: var(--coffee);
+        cursor: pointer;
+        transition:
+          transform 0.18s ease,
+          background 0.18s ease,
+          color 0.18s ease;
+      }
+      .side-btn.active {
+        background: var(--rust);
+        border-color: var(--rust);
+        color: var(--paper);
+        transform: translateY(-2px);
+      }
+      .side-btn:not(.active):hover {
+        transform: translateY(-2px);
+      }
+
+      /* ===== TRACKLIST ===== */
+      .side-panel {
+        display: none;
+        animation: fadeIn 0.4s ease;
+      }
+      .side-panel.visible {
+        display: block;
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(8px);
+        }
+        to {
+          opacity: 1;
+          transform: none;
+        }
+      }
+
+      .side-heading {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        border-bottom: 3px solid var(--coffee);
+        padding-bottom: 8px;
+        margin: 20px 0 4px;
+      }
+      .side-heading h2 {
+        font-family: "Rakkas", serif;
+        font-size: 1.4rem;
+        margin: 0;
+        color: var(--rust);
+      }
+      .side-heading span {
+        font-size: 0.65rem;
+        font-weight: 800;
+        color: var(--teal);
+        letter-spacing: 0.08em;
+      }
+      .track {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        padding: 10px 2px;
+        border-bottom: 1px dashed rgba(36, 26, 18, 0.25);
+      }
+      .track:last-child {
+        border-bottom: none;
+      }
+      .track:hover {
+        background: rgba(217, 154, 51, 0.08);
+      }
+      .track-num {
+        font-weight: 900;
+        font-size: 0.85rem;
+        color: var(--mustard);
+        min-width: 24px;
+      }
+      .track-icon {
+        font-size: 1.25rem;
+        min-width: 28px;
+        text-align: center;
+      }
+      .track-time {
+        font-weight: 800;
+        font-size: 0.9rem;
+        color: var(--coffee);
+        margin-bottom: 2px;
+      }
+      .track-desc {
+        font-size: 0.8rem;
+        color: var(--coffee-soft);
+        font-weight: 500;
+      }
+
+      .sprockets {
+        display: flex;
+        justify-content: center;
+        gap: 14px;
+        margin: 36px 0 10px;
+      }
+      .sprockets span {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: var(--coffee);
+        opacity: 0.35;
+      }
+
+      /* ===== WHEEL GAME ===== */
+      .wheel-card {
+        background: var(--paper);
+        border: 2px solid var(--coffee);
+        border-radius: 12px;
+        padding: 20px 20px 22px;
+        text-align: center;
+      }
+      .wheel-card h2 {
+        font-family: "Rakkas", serif;
+        font-size: 1.25rem;
+        color: var(--teal);
+        margin: 0 0 4px;
+      }
+      .wheel-card p {
+        font-size: 0.75rem;
+        color: var(--coffee-soft);
+        font-weight: 500;
+        margin: 0 0 16px;
+      }
+      .wheel-holder {
+        position: relative;
+        width: 210px;
+        height: 210px;
+        margin: 0 auto 18px;
+      }
+      .wheel-pointer {
+        position: absolute;
+        top: -6px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 0;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-top: 16px solid var(--coffee);
+        z-index: 3;
+      }
+      #wheel {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        border: 4px solid var(--coffee);
+        transition: transform 3.1s cubic-bezier(0.17, 0.85, 0.3, 1);
+      }
+      .spin-btn {
+        font-family: "Tajawal", sans-serif;
+        font-weight: 900;
+        font-size: 0.9rem;
+        padding: 10px 26px;
+        border-radius: 999px;
+        border: 2px solid var(--coffee);
+        background: var(--rust);
+        color: var(--paper);
+        cursor: pointer;
+      }
+      .spin-btn:disabled {
+        background: var(--paper);
+        color: var(--coffee);
+        cursor: default;
+      }
+      .wheel-result {
+        margin-top: 16px;
+        background: var(--cream);
+        border: 2px dashed var(--coffee);
+        border-radius: 10px;
+        padding: 12px 14px;
+        font-weight: 800;
+        font-size: 0.9rem;
+        display: none;
+      }
+      .wheel-result.show {
+        display: block;
+      }
+
+      /* ===== DAILY FACT ===== */
+      .daily {
+        max-width: 560px;
+        margin: 22px auto 0;
+        background: var(--teal);
+        color: var(--paper);
+        border-radius: 12px;
+        padding: 16px 18px;
+        display: flex;
+        gap: 12px;
+        align-items: flex-start;
+      }
+      .daily .icon {
+        font-size: 1.4rem;
+      }
+      .daily .head {
+        font-size: 0.68rem;
+        font-weight: 800;
+        letter-spacing: 0.05em;
+        opacity: 0.85;
+        margin-bottom: 4px;
+      }
+      .daily .fact {
+        font-size: 0.85rem;
+        font-weight: 600;
+        line-height: 1.7;
+      }
+
+      /* ===== LINER NOTES ===== */
+      .liner {
+        margin-top: 26px;
+        background: var(--paper);
+        border: 2px solid var(--coffee);
+        border-radius: 12px;
+        padding: 18px 20px 8px;
+      }
+      .liner-head {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        border-bottom: 3px solid var(--coffee);
+        padding-bottom: 8px;
+        margin-bottom: 6px;
+      }
+      .liner-head h2 {
+        font-family: "Rakkas", serif;
+        font-size: 1.15rem;
+        margin: 0;
+        color: var(--teal);
+      }
+      .liner-head span {
+        font-size: 0.6rem;
+        font-weight: 800;
+        color: var(--rust);
+        letter-spacing: 0.08em;
+      }
+      .liner-note {
+        font-size: 0.75rem;
+        color: var(--coffee-soft);
+        font-weight: 500;
+        margin: 6px 0 12px;
+      }
+      .lyric-slot {
+        display: flex;
+        gap: 12px;
+        padding: 12px 2px;
+        border-bottom: 1px dashed rgba(36, 26, 18, 0.25);
+      }
+      .lyric-slot:last-child {
+        border-bottom: none;
+      }
+      .lyric-num {
+        font-weight: 900;
+        color: var(--mustard);
+        min-width: 22px;
+      }
+      .lyric-title {
+        font-weight: 800;
+        color: var(--coffee);
+        margin-bottom: 4px;
+        font-size: 0.85rem;
+      }
+      .lyric-lines {
+        font-size: 0.78rem;
+        color: var(--coffee-soft);
+        font-weight: 500;
+        font-style: italic;
+      }
+
+      .hymn-body {
+        margin-top: 6px;
+      }
+      .hymn-columns {
+        display: flex;
+        gap: 18px;
+        margin-bottom: 10px;
+      }
+      .hymn-col-right,
+      .hymn-col-left {
+        flex: 1;
+        min-width: 0;
+      }
+      .hymn-verse {
+        white-space: pre-line;
+        font-size: 0.78rem;
+        line-height: 1.95;
+        color: var(--coffee-soft);
+        font-weight: 500;
+        margin-bottom: 14px;
+      }
+      .hymn-refrain {
+        white-space: pre-line;
+        background: rgba(46, 110, 103, 0.08);
+        border-radius: 6px;
+        padding: 8px 10px;
+        font-size: 0.78rem;
+        line-height: 1.95;
+        color: var(--teal);
+        font-weight: 700;
+        margin-bottom: 14px;
+      }
+      .hymn-refrain-label {
+        text-align: center;
+        font-weight: 900;
+        color: var(--rust);
+        font-size: 0.72rem;
+        letter-spacing: 0.06em;
+        margin: 8px 0;
+      }
+      @media (max-width: 480px) {
+        .hymn-columns {
+          flex-direction: column;
+          gap: 6px;
+        }
+      }
+
+      footer {
+        text-align: center;
+        padding: 28px 0 40px;
+        font-size: 0.7rem;
+        color: var(--coffee-soft);
+        font-weight: 700;
+        letter-spacing: 0.06em;
+      }
+
+      @media (max-width: 520px) {
+        .side-btn {
+          padding: 9px 16px;
+          font-size: 0.8rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="hero">
+        <div class="cringe-badge">٪١٠٠ Certified Cringe</div>
+        <div class="eyebrow">مؤتمر شباب الصليب والملكة هيلانة</div>
+
+        <div class="cassette">
+          <div class="cassette-label">
+            <div class="cassette-top">
+              <span>TYPE II ⋯ HIGH BIAS</span>
+              <span>C-90</span>
+            </div>
+            <div class="cassette-title">Crange</div>
+            <div class="cassette-sub">رجعة حلوة، وربنا في النص</div>
+            <div class="reels">
+              <div class="reel"></div>
+              <div class="reel"></div>
+            </div>
+            <div class="tape-strip"></div>
+          </div>
+        </div>
+
+        <p class="tagline">
+          من أول صلاة في المؤتمر لحد آخر لحظة في حفل الختام — ٣ أيام كاملين
+          مسجّلين هنا زي شريط الكاسيت بتاعك القديم.
+        </p>
+
+        <div class="info-card">
+          <div class="info-row">
+            <span>🗓️</span>
+            <span>من ١٠ إلى ١٢ سبتمبر</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="counter">
+        <div class="counter-label">TAPE COUNTER ⏳ باقي على Crange</div>
+        <div class="counter-row">
+          <div class="counter-box">
+            <div class="num" id="cd-days">00</div>
+            <div class="lbl">يوم</div>
+          </div>
+          <div class="counter-box">
+            <div class="num" id="cd-hours">00</div>
+            <div class="lbl">ساعة</div>
+          </div>
+          <div class="counter-box">
+            <div class="num" id="cd-mins">00</div>
+            <div class="lbl">دقيقة</div>
+          </div>
+          <div class="counter-box">
+            <div class="num" id="cd-secs">00</div>
+            <div class="lbl">ثانية</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="intro">
+        <h2>إيه هو Crange؟ 📼</h2>
+        <p>
+          مش مؤتمر عادي... Crange هو ٣ أيام هنرجع فيهم بالزمن شوية، نفتكر
+          ألبومات الكاسيت والصور القديمة، ونعيش حاجة حقيقية مع ربنا وسط ناس
+          بيفهمونا. جو رجعة، ضحك، وكرينج بجد — وربنا في النص كل لحظة.
+        </p>
+      </div>
+
+      <div class="deck">
+        <button class="side-btn active" data-side="a">🅰️ اليوم الأول</button>
+        <button class="side-btn" data-side="b">🅱️ اليوم التاني</button>
+        <button class="side-btn" data-side="c">©️ اليوم التالت</button>
+      </div>
+
+      <div class="flip-stage">
+        <div class="side-panel visible" id="side-a">
+          <div class="side-heading">
+            <h2>الوجه الأول</h2>
+            <span>17 TRACKS</span>
+          </div>
+          <div class="track">
+            <div class="track-num">01</div>
+            <div class="track-icon">📍</div>
+            <div>
+              <div class="track-time">التجمع</div>
+              <div class="track-desc">لَمّ الشِلّة</div>
+            </div>
+          </div>
+          <div class="track">
+            <div class="track-num">02</div>
+            <div class="track-icon">🚌</div>
+            <div>
+              <div class="track-time">التحرك</div>
+              <div class="track-desc">يلا بينااا</div>
+            </div>
+          </div>
+          <div class="track">
+            <div class="track-num">03</div>
+            <div class="track-icon">🏁</div>
+            <div>
+              <div class="track-time">الوصول</div>
+              <div class="track-desc">Finally وصلنا</div>
+            </div>
+          </div>
+          <div class="track">
+            <div class="track-num">04</div>
+            <div class="track-icon">🙏🎶</div>
+            <div>
+              <div class="track-time">صلاة وترانيم</div>
+              <div class="track-desc">نبدأ صح</div>
+            </div>
+          </div>
+          <div class="track">
+            <div class="track-num">05</div>
+            <div class="track-icon">🎤</div>
+            <div>
+              <div class="track-time">كلمة</div>
+              <div class="track-desc">اسمع يا نجم</div>
+            </div>
+          </div>
+          <div class="track">
+            <div class="track-num">06</div>
+            <div class="track-icon">☕</div>
+            <div>
+              <div class="track-time">بريك</div>
+              <div class="track-desc">فاصل ونواصل</div>
+            </div>
+          </div>
+          <div class="track">
+            <div class="track-num">07</div>
+            <div class="track-icon">🛠️</div>
+            <div>
+              <div class="track-time">ورشة عمل</div>
+              <div class="track-desc">شغّل المخ</div>
+            </div>
+          </div>
+          <div class="track">
+            <div class="track-num">08</div>
+            <div class="track-icon">🎨</div>
+            <div>
+              <div class="track-time">عمل فني</div>
+              <div class="track-desc">الفنان اللي جواك</div>
+            </div>
+          </div>
+          <div class="track">
+            <div class="track-num">09</div>
+            <div class="track-icon">🛏️</div>
+            <div>
+              <div class="track-time">تسكين الغرف</div>
+              <div class="track-desc">مين مع مين؟</div>
+            </div>
+          </div>
+          <div class="track">
+            <div class="track-num">10</div>
+            <div class="track-icon">🍽️</div>
+            <div>
+              <div class="track-time">الغداء</div>
+              <div class="track-desc">هجوم على الأكل</div>
+            </div>
+          </div>
+          <div class="track">
+            <div class="track-num">11</div>
+            <div class="track-icon">🏊‍♀️</div>
+            <div>
+              <div class="track-time">البسين للبنات</div>
+              <div class="track-desc">Girls Splash 💅</div>
+            </div>
+          </div>
+          <div class="track">
+            <div class="track-num">12</div>
+            <div class="track-icon">🏊‍♂️</div>
+            <div>
+              <div class="track-time">البسين للرجالة</div>
+              <div class="track-desc">Splash يا رجالة</div>
+            </div>
+          </div>
+          <div class="track">
+            <div class="track-num">13</div>
+            <div class="track-icon">😴</div>
+            <div>
+              <div class="track-time">راحة</div>
+              <div class="track-desc">وضع الطيران</div>
+            </div>
+          </div>
+          <div class="track">
+            <div class="track-num">14</div>
+            <div class="track-icon">🌅🙏</div>
+            <div>
+              <div class="track-time">صلاة الغروب</div>
+              <div class="track-desc">Sunset مع ربنا</div>
+            </div>
+          </div>
+          <div class="track">
+            <div class="track-num">15</div>
+            <div class="track-icon">📖</div>
+            <div>
+              <div class="track-time">دراسة الكتاب المقدس</div>
+              <div class="track-desc">Back to the أصل</div>
+            </div>
+          </div>
+          <div class="track">
+            <div class="track-num">16</div>
+            <div class="track-icon">⚽🎮</div>
+            <div>
+              <div class="track-time">ألعاب وكورة</div>
+              <div class="track-desc">وقت التكسير 🔥</div>
+            </div>
+          </div>
+          <div class="track">
+            <div class="track-num">17</div>
+            <div class="track-icon">🍔</div>
+            <div>
+              <div class="track-time">عشاء خارج المطعم</div>
+              <div class="track-desc">الأكل برّه أحلى 😎</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="side-panel" id="side-b">
+          <div class="side-heading">
+            <h2>الوجه التاني</h2>
+            <span>15 TRACKS</span>
+          </div>
+          <div class="track">
+            <div class="track-num">01</div>
+            <div class="track-icon">⏰</div>
+            <div>
+              <div class="track-time">استيقاظ</div>
+              <div class="track-desc">صباح الفل يا نيام</div>
+            </div>
+          </div>
+          <div class="track">
+            <div class="track-num">02</div>
+            <div class="track-icon">🍳</div>
+            <div>
+              <div class="track-time">فطار</div>
+              <div class="track-desc">شحن البطارية</div>
+            </div>
+          </div>
+          <div class="track">
+            <div class="track-num">03</div>
+            <div class="track-icon">🏊‍♂️</div>
+            <div>
+              <div class="track-time">بسين رجالة</div>
+              <div class="track-desc">Splash يا رجالة</div>
+            </div>
+          </div>
+          <div class="track">
+            <div class="track-num">04</div>
+            <div class="track-icon">🏊‍♀️</div>
+            <div>
+              <div class="track-time">بسين بنات</div>
+              <div class="track-desc">Girls Time 💅</div>
+            </div>
+          </div>
+          <div class="track">
+            <div class="track-num">05</div>
+            <div class="track-icon">😴</div>
+            <div>
+              <div class="track-time">راحة</div>
+              <div class="track-desc">AFK شوية</div>
+            </div>
+          </div>
+          <div class="track">
+            <div class="track-num">06</div>
+            <div class="track-icon">🍽️</div>
+            <div>
+              <div class="track-time">الغداء</div>
+              <div class="track-desc">Loading Food…</div>
+            </div>
+          </div>
+          <div class="track">
+            <div class="track-num">07</div>
+            <div class="track-icon">🎭</div>
+            <div>
+              <div class="track-time">تحضير حفل السمر</div>
+              <div class="track-desc">هنولّعها</div>
+            </div>
+          </div>
+          <div class="track">
+            <div class="track-num">08</div>
+            <div class="track-icon">🌅🙏</div>
+            <div>
+              <div class="track-time">صلاة الغروب</div>
+              <div class="track-desc">Sunset مع ربنا</div>
+            </div>
+          </div>
+          <div class="track">
+            <div class="track-num">09</div>
+            <div class="track-icon">🎤</div>
+            <div>
+              <div class="track-time">كلمة روحية</div>
+              <div class="track-desc">اسمع يا نجم</div>
+            </div>
+          </div>
+          <div class="track">
+            <div class="track-num">10</div>
+            <div class="track-icon">☕</div>
+            <div>
+              <div class="track-time">بريك</div>
+              <div class="track-desc">Pause ▶️</div>
+            </div>
+          </div>
+          <div class="track">
+            <div class="track-num">11</div>
+            <div class="track-icon">🛠️</div>
+            <div>
+              <div class="track-time">ورشة عمل</div>
+              <div class="track-desc">شغّل المخ</div>
+            </div>
+          </div>
+          <div class="track">
+            <div class="track-num">12</div>
+            <div class="track-icon">🎶</div>
+            <div>
+              <div class="track-time">تسبحة</div>
+              <div class="track-desc">كلم السماء 🎵</div>
+            </div>
+          </div>
+          <div class="track">
+            <div class="track-num">13</div>
+            <div class="track-icon">⚽🎮</div>
+            <div>
+              <div class="track-time">ألعاب وكورة</div>
+              <div class="track-desc">وقت التكسير 🔥</div>
+            </div>
+          </div>
+          <div class="track">
+            <div class="track-num">14</div>
+            <div class="track-icon">🍔</div>
+            <div>
+              <div class="track-time">عشاء خارج المطعم</div>
+              <div class="track-desc">الأكل برّه أحلى 😎</div>
+            </div>
+          </div>
+          <div class="track">
+            <div class="track-num">🔥</div>
+            <div class="track-icon">🎉</div>
+            <div>
+              <div class="track-time">حفل السمر</div>
+              <div class="track-desc">Main Character Moment</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="side-panel" id="side-c">
+          <div class="side-heading">
+            <h2>الوجه التالت</h2>
+            <span>4 TRACKS</span>
+          </div>
+          <div class="track">
+            <div class="track-num">01</div>
+            <div class="track-icon">⏰</div>
+            <div>
+              <div class="track-time">صحيان</div>
+              <div class="track-desc">قوم يا نجم، اليوم التالت جه</div>
+            </div>
+          </div>
+          <div class="track">
+            <div class="track-num">02</div>
+            <div class="track-icon">⛪🙏</div>
+            <div>
+              <div class="track-time">قداس</div>
+              <div class="track-desc">Live مع السما</div>
+            </div>
+          </div>
+          <div class="track">
+            <div class="track-num">03</div>
+            <div class="track-icon">🍳</div>
+            <div>
+              <div class="track-time">فطار</div>
+              <div class="track-desc">Last Call ع الأكل</div>
+            </div>
+          </div>
+          <div class="track">
+            <div class="track-num">04</div>
+            <div class="track-icon">🧳</div>
+            <div>
+              <div class="track-time">تسليم الغرف</div>
+              <div class="track-desc">Check-out يا بطل</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sprockets">
+        <span></span><span></span><span></span><span></span><span></span>
+      </div>
+
+      <div class="wheel-card">
+        <h2>عجلة الكرينج 🎡</h2>
+        <p>دور العجلة وشوف التحدي اللي هيجيلك... محدش هيفوت! 😈</p>
+        <div class="wheel-holder">
+          <div class="wheel-pointer"></div>
+          <div id="wheel"></div>
+        </div>
+        <button class="spin-btn" id="spin-btn">دور دلوقتي 🔥</button>
+        <div class="wheel-result" id="wheel-result"></div>
+      </div>
+
+      <div class="daily">
+        <span class="icon">📼</span>
+        <div>
+          <div class="head">آية كاسيت اليوم — ارجع بكرة تلاقي واحدة جديدة</div>
+          <div class="fact" id="daily-fact"></div>
+        </div>
+      </div>
+
+      <div class="liner">
+        <div class="liner-head">
+          <h2>كلمات الترانيم</h2>
+          <span>LINER NOTES</span>
+        </div>
+        <p class="liner-note">
+          زي ورقة الكاسيت اللي جوه العلبة — هنا مكان الترانيم التلاتة بتاعت
+          المؤتمر.
+        </p>
+
+        <div class="lyric-slot">
+          <div class="lyric-num">01</div>
+          <div style="flex: 1">
+            <div class="lyric-title">صورتي عندك</div>
+            <div class="hymn-body">
+              <div class="hymn-columns">
+                <div class="hymn-col-right">
+                  <div class="hymn-verse">
+                    1- صورتى عندك صورة جميلة صورة قداسة صورة طهارة صورة فى فكرك
+                    مش فى الحقيقة يوم بعد يوم كترت همومى
+                  </div>
+                </div>
+                <div class="hymn-col-left">
+                  <div class="hymn-verse">
+                    رغم أنى خاطئ عنيد رسمتها لى بأحلى أيد كانت حقيقة فى يوم
+                    عمادى زادت ذنوبى شوهتلى الصورة
+                  </div>
+                </div>
+              </div>
+
+              <div class="hymn-refrain-label">القرار</div>
+              <div class="hymn-columns">
+                <div class="hymn-col-right">
+                  <div class="hymn-refrain">
+                    رجعنى تانى لشكلى الأولانى خليني شبهك على صورتك ورسمك
+                  </div>
+                </div>
+                <div class="hymn-col-left">
+                  <div class="hymn-refrain">
+                    ألبسنى تانى حلتى الأولى رجعنى تانى للمسيح أيقونة
+                  </div>
+                </div>
+              </div>
+
+              <div class="hymn-columns">
+                <div class="hymn-col-right">
+                  <div class="hymn-verse">
+                    2- حرت فى حياتى وماشى أدور لا عارف أبقى زى غيرى وناسى أدور
+                    على صورتى عندك أعمال عظيمة من وقت أزلى
+                  </div>
+                </div>
+                <div class="hymn-col-left">
+                  <div class="hymn-verse">
+                    من كل إنسان على فضيلة ولا عارف أعمل من نفسى قيمة اكشف جمالها
+                    فيها جهادى أعددتها لى مرسومة فى الصورة
+                  </div>
+                </div>
+              </div>
+
+              <div class="hymn-columns">
+                <div class="hymn-col-right">
+                  <div class="hymn-verse">
+                    3- صورتى عندك مرسومة بدقة فيها كل تفاصيل حياتى أعددت لى غلبة
+                    على الخطية أقدر أحارب كل التجارب
+                  </div>
+                </div>
+                <div class="hymn-col-left">
+                  <div class="hymn-verse">
+                    من وقت أزلى قبل ميلادى من يوم ميلادى حتى مماتى على كل سقطة
+                    ما أنت قارب نجاتى بسيف إيمانى مرسوم لى فى الصورة
+                  </div>
+                </div>
+              </div>
+
+              <div class="hymn-columns">
+                <div class="hymn-col-right">
+                  <div class="hymn-verse">
+                    4- يا اللى بتقبل كأس ميه بارد رطل ناردين من مرأة خاطية أقبل
+                    حياتى.. قلة قدراتى بس بحبك من كل قلبى
+                  </div>
+                </div>
+                <div class="hymn-col-left">
+                  <div class="hymn-verse">
+                    فلسين.. خمس خبزات.. سمكتين خد من أيدى.. ليك عندى دين ضعف
+                    مواهبى ده أنا صفر اليدين ده أنت الهى ما ليش سيدين
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="lyric-slot">
+          <div class="lyric-num">02</div>
+          <div style="flex: 1">
+            <div class="lyric-title">امهلني وقتًا</div>
+            <div class="hymn-body">
+              <div class="hymn-verse">
+                أمْهِلْنِي وَقْتًا لِلْتَوْبَةِ فَأُجَالِسَكَ وَأُحَادِثَكَ عَنْ
+                ضَعَفَاتِي عَنْ هَفَوَاتِي وَخَبَايَا قَلْبِي المَكْسُورِ
+              </div>
+
+              <div class="hymn-verse">
+                اِدْعُونِي لِوَلِيمَةِ حُبِّكَ فَأُلَبِى الدَّعْوَةَ
+                وَتُشْبِعْنِي مَنَّ سَمَاوِي حُبَّ حَقِيقِىَّ يُشْعِرُ
+                أَرْجَائِي بِسُرُورِ
+              </div>
+
+              <div class="hymn-refrain-label">القرار</div>
+              <div class="hymn-refrain">
+                ولِتُخْرِجْنِي بِمَرَاحَمِكَ مِنْ حَبْسِ ومِنْ قَيْدِ وَ شُرُورِ
+                أَنْتَ إِلَهي كَمْ تُصْغِي لِيَ وَكَلَامُكَ رَبِّي يَكُونُ
+                النُّور (2)
+              </div>
+
+              <div class="hymn-verse">
+                إِمْنَحْنِي نَفْسًا مَسْكُوبَةً فَتُكَرِسَهَا وتُقَدِّسَهَا
+                طِيْلَةَ عُمْرِي رَبِّي مُرْنِي فَأَجُولَ معك دون فُتوُرِ
+              </div>
+
+              <div class="hymn-verse">
+                اَقْبَلَنِي بِثَوْبِي المُتَّسِخِ فَأُمَجدَكَ وأُكَرِّمَكَ
+                ولِتَصْنَعْنِي وَلِتَرْفَعْنِي وَتُحَرّرَ قَلْبِي الْمَأْسُورَ
+              </div>
+
+              <div class="hymn-verse">
+                أوهِبنيِ ثِمَاراً وَوِعُودًا أنْشِرُ حُبَّكَ أُخبِرُ عَنكَ
+                وأُسَبحُكَ وأُبَارِكُكَ أُوَفى إِلَيْكَ كُلَّ نُذُورِ
+              </div>
+
+              <div class="hymn-verse">
+                أَرِنِي مِنْ أَجْلِ مَحَبَّتِكَ أَنىَّ قَدْ امْتَرْتُ بِكَ
+                عَجَباً فَتحَمْيِنِي وتُغْنيِنيِ وأَظَلُّ فِي حُضْنِكَ
+                مَسْتُوراً
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="lyric-slot">
+          <div class="lyric-num">03</div>
+          <div style="flex: 1">
+            <div class="lyric-title">وفيما أظنه لا يستجيب</div>
+            <div class="hymn-body">
+              <div class="hymn-verse">
+                و فيما أظُنُّهُ لا يستجيبْ، يُرَتِّبُ أمراً عجيباً .. رهيبْ
+                يَحِلُّ قيودي و يُطْفي اللهيبْ بيَدِهِ، فيَصْنَعُ عهداً جديدْ
+              </div>
+
+              <div class="hymn-verse">
+                يَظَلُّ أميناً وديعاً قريبْ فيُخْجِلُ قلبي بِحُبٍّه العجيبْ و
+                حينَ يَطُولُ الليلُ الرَّهيبْ أراهُ يُضِيءُ أمامي الطريقْ و
+                يَفْتَح أمامي باباً جديدْ
+              </div>
+
+              <div class="hymn-refrain-label">القرار</div>
+              <div class="hymn-refrain">
+                فكَيْفَ أظُنُّهُ لا يَسْتَجِيبْ ...
+              </div>
+
+              <div class="hymn-verse">
+                يُزَلْزِلُ أسوارَ سِجْني العتيدْ و يُعْطِي لنَفْسي سلاماً عجيبْ
+                و يَسْكُبُ زَيْتاً و ماءً و خَمْراً يُضَمِّدُ جُرْحي إلى أنْ
+                يَطِيبْ رأيْتُهُ يَنْظُر مِن فَوْقِ الصَّليب و يَرْقُب رُجوعي
+                لهُ مِن بعيدْ و دَمُهُ كَنَبْعٍ، شِفاءً و حُبَّاً ... حياةً و
+                بِرَّاً لِمَن يُريدْ
+              </div>
+
+              <div class="hymn-refrain-label">القرار</div>
+              <div class="hymn-refrain">
+                فكَيْفَ أظُنُّهُ لا يَسْتَجِيبْ ...
+              </div>
+
+              <div class="hymn-verse">
+                يُطَمْئنُ خَوْفي، يُنِيرُ السَّبيلْ لهُ سُلْطانٌ علَى
+                المُسْتَحيلْ يُكَفْكِفُ دَمْعِي و يَرْفَعُ حِمْلِي علَى
+                كَتِفَيْهِ، بِطُولِ المَسِيرْ نَظَرْتُ إليهِ بِعَيْنِ العَبيدْ
+                فمَالَ إليَّ كأبٍّ رَحِيمْ يَهْرَعُ لِعَوْنِي، و يَعْرِفُ
+                وَجَعِي و يَدْعُوني إبْناً بينَ البَنِين
+              </div>
+
+              <div class="hymn-refrain-label">القرار</div>
+              <div class="hymn-refrain">
+                فكَيْفَ أظُنُّهُ لا يَسْتَجِيبْ ...
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="lyric-slot">
+          <div class="lyric-num">04</div>
+          <div style="flex: 1">
+            <div class="lyric-title">أنا خروفك الضال</div>
+            <div class="hymn-body">
+              <div class="hymn-verse">
+                أنا خروفك الضال أنا درهمك المفقود أنا اللى جيت علشانى سيبت يا رب
+                الملكوت اسمع يا إلهى ليا ورينى صلاحك فيا
+              </div>
+
+              <div class="hymn-verse">
+                بقيت اعمى فى طريقى تايه من غير بصر بفقد راحتى وسلامى كل ما ذنبى
+                بيكبر بنادى بقلبى حبك و رعايتك الخفية إنسى يا رب الخطية ورينى
+                صلاحك فيا
+              </div>
+
+              <div class="hymn-refrain-label">القرار</div>
+              <div class="hymn-refrain">
+                أنا خروفك الضال أنا درهمك المفقود أنا اللى جيت علشانى سيبت يا رب
+                الملكوت اسمع يا إلهى ليا ورينى صلاحك فيا
+              </div>
+
+              <div class="hymn-verse">
+                ليا عندك محبة أبدية و طول العمر بتمتع بالبنوة و أوقات ضعفى بتمر
+                احسبنى السامرية و اذكر وعودك ليا إنسى يا رب الخطية ورينى صلاحك
+                فيا
+              </div>
+
+              <div class="hymn-verse">
+                عارف إنى يا رب إنك قدوس تكره الشر بس انت يا رب صالح محب البشر
+                توبنى ليك وقوم .. موت الصلاة اللى فى .. دوقنى الأبدية ورينى
+                صلاحك فيا
+              </div>
+
+              <div class="hymn-refrain-label">القرار</div>
+              <div class="hymn-refrain">
+                أنا خروفك الضال أنا درهمك المفقود أنا اللى جيت علشانى سيبت يا رب
+                الملكوت اسمع يا إلهى ليا ورينى صلاحك فيا
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="lyric-slot">
+          <div class="lyric-num">05</div>
+          <div style="flex: 1">
+            <div class="lyric-title">نوّري نوّري يا كنيسة المسيح</div>
+            <div class="hymn-body">
+              <div class="hymn-refrain-label">القرار</div>
+              <div class="hymn-refrain">
+                نورى نورى يا كنيسة المسيح نورى نورى نورى
+              </div>
+
+              <div class="hymn-verse">
+                دا عيد شهدائك .. دا عيد شهدائك الابرار القديسين نورى نورى نورى
+              </div>
+
+              <div class="hymn-verse">
+                فى النيروز .. فى النيروز ذكرى الشهداء القديسين القديسين القديسين
+              </div>
+
+              <div class="hymn-verse">
+                الدم سال ياما سال انهار .. الدم سال ياما سال انهار دم الشهداء دم
+                الابرار دم الاطهار دم الابطال
+              </div>
+
+              <div class="hymn-verse">
+                يارب احفظ لينا ايمانا .. يارب احفظ لينا ايمانا واحفظ لينا بطركنا
+                نورى نورى نورى
+              </div>
+
+              <div class="hymn-refrain-label">القرار</div>
+              <div class="hymn-refrain">
+                نورى نورى يا كنيسة المسيح نورى نورى نورى
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="lyric-slot">
+          <div class="lyric-num">06</div>
+          <div style="flex: 1">
+            <div class="lyric-title">في النيروز نتهنى ونفرح</div>
+            <div class="hymn-body">
+              <div class="hymn-verse">
+                فى النيروز نتهنى ونفرح سيرة الشهداء حقيقى تفرح
+              </div>
+
+              <div class="hymn-verse">
+                شافوا عذاب لكن وياهم ربنا دايمًا يتولاهم
+              </div>
+
+              <div class="hymn-verse">عمره فى يوم أبدًا ما نساهم</div>
+
+              <div class="hymn-verse">
+                مهما إن كانوا فى سجن يصلوا عمر فى يوم ماضاقوا أو ملوا
+              </div>
+
+              <div class="hymn-verse">
+                صوتهم كان فى التسبيح عالى رغم الجلد وظلم ليالى
+              </div>
+
+              <div class="hymn-verse">
+                أصل حبيبهم كان وياهم بيصبرهم وبيرعاهم
+              </div>
+
+              <div class="hymn-verse">
+                صوتهم كان فى التسبحة عالى رغم الجلد وظلم ليالى
+              </div>
+
+              <div class="hymn-verse">
+                أصل حنانه فاض وكساهم لطفه الحانى كمان غطاهم
+              </div>
+
+              <div class="hymn-verse">
+                صوتهم كان فى التسبحة عالى رغم الجلد وظلم ليالى
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>PRESS PLAY ▶ — Crange</footer>
+    </div>
+
+    <script>
+      /* ===== Day toggle ===== */
+      const buttons = document.querySelectorAll(".side-btn");
+      const panels = {
+        a: document.getElementById("side-a"),
+        b: document.getElementById("side-b"),
+        c: document.getElementById("side-c"),
+      };
+      buttons.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          buttons.forEach((b) => b.classList.remove("active"));
+          btn.classList.add("active");
+          Object.values(panels).forEach((p) => p.classList.remove("visible"));
+          panels[btn.dataset.side].classList.add("visible");
+        });
+      });
+
+      /* ===== Countdown (tape counter) ===== */
+      const target = new Date("2026-09-10T09:00:00").getTime();
+      function updateCountdown() {
+        const left = Math.max(target - Date.now(), 0);
+        const d = Math.floor(left / 86400000);
+        const h = Math.floor((left % 86400000) / 3600000);
+        const m = Math.floor((left % 3600000) / 60000);
+        const s = Math.floor((left % 60000) / 1000);
+        document.getElementById("cd-days").textContent = String(d).padStart(
+          2,
+          "0",
+        );
+        document.getElementById("cd-hours").textContent = String(h).padStart(
+          2,
+          "0",
+        );
+        document.getElementById("cd-mins").textContent = String(m).padStart(
+          2,
+          "0",
+        );
+        document.getElementById("cd-secs").textContent = String(s).padStart(
+          2,
+          "0",
+        );
+      }
+      updateCountdown();
+      setInterval(updateCountdown, 1000);
+
+      /* ===== Cringe wheel game ===== */
+      const wheelChallenges = [
+        "قول جملة كرينج قدام الكل 😳",
+        "ارقص ١٠ ثواني من غير موسيقى 🕺",
+        "قلّد صوت كرتون تفتكره 🎬",
+        "خد سيلفي بأغرب وش عندك 🤳",
+        "غنّي أول جملة من أي مهرجان 🎤",
+        "احكي أكتر موقف محرج حصلك 😂",
+        "اذكر أسماء 5 دول بسرعة 🌍",
+        "عد من 20 إلى 1 بالعكس 🔢",
+        "قل أسماء أعضاء المؤتمر من الذاكرة 👥",
+        "اذكر ثلاث مهارات تريد تعلمها 📚",
+        "شارك نصيحة مفيدة تعلمتها من تجربة 💡",
+        "امشِ مثل البطريق لمدة 30 ثانية 🐧",
+        "حاول تلمس أصابع قدميك 10 مرات 🧘",
+        "شارك شيئًا مميزًا عنك لا يعرفه أحد في المجموعة 🤫",
+        "قل 3 أشياء تحبها و3 أشياء لا تحبها 📝",
+        "اذكر أغرب موهبة عندك أو حلمت أنك تمتلكها 🌟",
+        "حاول تضحك الجميع في 30 ثانية بدون ما تضحك أنت 😂",
+      ];
+      const wheelColors = [
+        "#B14A2E",
+        "#DA9A33",
+        "#2E6E67",
+        "#7a3b26",
+        "#c77d2e",
+        "#3d7a72",
+      ];
+      const segAngle = 360 / wheelChallenges.length;
+      const wheelEl = document.getElementById("wheel");
+      wheelEl.style.background =
+        "conic-gradient(" +
+        wheelColors
+          .map(
+            (c, i) =>
+              c + " " + i * segAngle + "deg " + (i + 1) * segAngle + "deg",
+          )
+          .join(", ") +
+        ")";
+
+      let currentRotation = 0;
+      let spinning = false;
+      const spinBtn = document.getElementById("spin-btn");
+      const resultBox = document.getElementById("wheel-result");
+
+      spinBtn.addEventListener("click", () => {
+        if (spinning) return;
+        spinning = true;
+        spinBtn.disabled = true;
+        spinBtn.textContent = "بتلف... 🎡";
+        resultBox.classList.remove("show");
+
+        const idx = Math.floor(Math.random() * wheelChallenges.length);
+        const center = idx * segAngle + segAngle / 2;
+        const extraSpins = 5 * 360;
+        const targetRotation = extraSpins + (360 - center);
+        currentRotation =
+          currentRotation - (currentRotation % 360) + targetRotation;
+        wheelEl.style.transform = "rotate(" + currentRotation + "deg)";
+
+        setTimeout(() => {
+          spinning = false;
+          spinBtn.disabled = false;
+          spinBtn.textContent = "دور تاني 🔥";
+          resultBox.textContent = wheelChallenges[idx];
+          resultBox.classList.add("show");
+        }, 3200);
+      });
+
+      /* ===== Daily fact ===== */
+      const cassetteFacts = [
+        "لَا تَخَفْ لِأَنِّي مَعَكَ. لَا تَتَلَفَّتْ لِأَنِّي إِلَهُكَ. قَدْ أَيَّدْتُكَ وَأَعَنْتُكَ وَعَضَدْتُكَ بِيَمِينِ بِرِّي. (إشعياء 41: 10)",
+        "لِأَنِّي عَرَفْتُ ٱلْأَفْكَارَ ٱلَّتِي أَنَا مُفْتَكِرٌ بِهَا عَنْكُمْ، يَقُولُ ٱلرَّبُّ، أَفْكَارَ سَلَامٍ لَا شَرٍّ، لِأُعْطِيَكُمْ آخِرَةً وَرَجَاءً. (إرميا 29: 11)",
+        "أَسْتَطِيعُ كُلَّ شَيْءٍ فِي الْمَسِيحِ الَّذِي يُقَوِّينِي. (فيلبي 4: 13)",
+      ];
+      const now = new Date();
+      const startOfYear = new Date(now.getFullYear(), 0, 0);
+      const dayOfYear = Math.floor((now - startOfYear) / 86400000);
+      document.getElementById("daily-fact").textContent =
+        cassetteFacts[dayOfYear % cassetteFacts.length];
+    </script>
+  </body>
+</html>
