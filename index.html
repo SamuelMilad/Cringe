@@ -1244,7 +1244,7 @@
 
       <!-- ===== COUNTDOWN ===== -->
       <div class="counter">
-        <div class="counter-label">⏳ TAPE COUNTER — باقي على Cringe</div>
+        <div class="counter-label">⏳ TAPE COUNTER — المؤتمر هيخلص بعد</div>
         <div class="counter-row">
           <div class="counter-box">
             <div class="num" id="cd-days">00</div>
@@ -1448,7 +1448,7 @@
             <div class="track-icon">⚽🎮</div>
             <div>
               <div class="track-time">
-                <span class="time-tag">⏰ 9:00 م</span
+                <span class="time-tag">⏰ 8:00 م</span
                 ><span class="track-name">وقت التكسير 🔥</span>
               </div>
             </div>
@@ -1856,8 +1856,7 @@
             <div class="hymn-body">
               <div class="hymn-verse">
                 و فيما أظُنُّهُ لا يستجيبْ، يُرَتِّبُ أمراً عجيباً .. رهيبْ
-                يَحِلُّ قيودي و يُطْفي اللهيبْ بيَدِهِ، فيَصْنَعُ عهداً جديدْ
-              </div>
+                يَحِلُّ قيودي و يُطْفي اللهيبْ بيَدِهِ، فيَصْنَعُ عهداً جديدْ              </div>
               <div class="hymn-verse">
                 يَظَلُّ أميناً وديعاً قريبْ فيُخْجِلُ قلبي بِحُبٍّه العجيبْ و
                 حينَ يَطُولُ الليلُ الرَّهيبْ أراهُ يُضِيءُ أمامي الطريقْ و
@@ -2031,25 +2030,50 @@
         });
       });
 
-      /* ===== Countdown with Celebration Message ===== */
-      const target = new Date("2026-09-10T09:00:00").getTime();
+      /* ===== Countdown ===== */
+      // المؤتمر يبدأ 10 سبتمبر 2026 الساعة 6:30 صباحاً
+      const startDate = new Date("2026-09-10T06:30:00").getTime();
+      // المؤتمر ينتهي 12 سبتمبر 2026 الساعة 10:00 صباحاً
+      const endDate = new Date("2026-09-12T10:00:00").getTime();
 
       function updateCountdown() {
         const now = Date.now();
-        const left = target - now;
 
-        // إذا كان الوقت قد حان أو تجاوز الهدف
-        if (left <= 0) {
+        // إذا كان المؤتمر لم يبدأ بعد
+        if (now < startDate) {
+          // انتظر حتى يبدأ
+          document.getElementById("cd-days").textContent = "00";
+          document.getElementById("cd-hours").textContent = "00";
+          document.getElementById("cd-mins").textContent = "00";
+          document.getElementById("cd-secs").textContent = "00";
+          document.querySelector(".counter-label").textContent =
+            "⏳ المؤتمر هيبدأ قريباً";
+          document.querySelector(".counter").style.background =
+            "linear-gradient(145deg, #3f2e1e, #2a1e14)";
+          document.querySelector(".counter").style.boxShadow =
+            "0 12px 32px var(--shadow), inset 0 1px 0 rgba(255,255,255,0.05)";
+          document.querySelectorAll(".counter-box .num").forEach((el) => {
+            el.style.background = "#1b140e";
+            el.style.borderColor = "#3f2e1e";
+            el.style.color = "#f4e9c8";
+            el.style.fontSize = "1.8rem";
+            el.style.animation = "counterPulse 2s infinite alternate";
+          });
+          document.querySelectorAll(".counter-box .lbl").forEach((el) => {
+            el.style.color = "#b8a68b";
+            el.style.opacity = "";
+          });
+          return;
+        }
+
+        // إذا كان المؤتمر قد انتهى
+        if (now >= endDate) {
           document.getElementById("cd-days").textContent = "🎉";
           document.getElementById("cd-hours").textContent = "🎉";
           document.getElementById("cd-mins").textContent = "🎉";
           document.getElementById("cd-secs").textContent = "🎉";
-
-          // تغيير النص العلوي
           document.querySelector(".counter-label").textContent =
-            "✨ المؤتمر بدأ! ✨";
-
-          // إضافة تأثير احتفالي
+            "✨ المؤتمر انتهى! ✨";
           document.querySelector(".counter").style.background =
             "linear-gradient(145deg, #b14a2e, #da9a33)";
           document.querySelector(".counter").style.boxShadow =
@@ -2069,7 +2093,8 @@
           return;
         }
 
-        // العد التنازلي العادي
+        // المؤتمر جاري - عرض الوقت المتبقي حتى النهاية
+        const left = endDate - now;
         const d = Math.floor(left / 86400000);
         const h = Math.floor((left % 86400000) / 3600000);
         const m = Math.floor((left % 3600000) / 60000);
@@ -2091,6 +2116,25 @@
           2,
           "0",
         );
+
+        // تأكد من أن العداد يبدو طبيعياً (لون عادي) أثناء المؤتمر
+        document.querySelector(".counter-label").textContent =
+          "⏳ TAPE COUNTER — المؤتمر هيخلص بعد";
+        document.querySelector(".counter").style.background =
+          "linear-gradient(145deg, #3f2e1e, #2a1e14)";
+        document.querySelector(".counter").style.boxShadow =
+          "0 12px 32px var(--shadow), inset 0 1px 0 rgba(255,255,255,0.05)";
+        document.querySelectorAll(".counter-box .num").forEach((el) => {
+          el.style.background = "#1b140e";
+          el.style.borderColor = "#3f2e1e";
+          el.style.color = "#f4e9c8";
+          el.style.fontSize = "1.8rem";
+          el.style.animation = "counterPulse 2s infinite alternate";
+        });
+        document.querySelectorAll(".counter-box .lbl").forEach((el) => {
+          el.style.color = "#b8a68b";
+          el.style.opacity = "";
+        });
       }
 
       // التحديث كل ثانية
